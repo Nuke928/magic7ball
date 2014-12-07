@@ -7,7 +7,7 @@ A 8ball spinoff website.
 Modify answers.js if you want to have more/different answer types.
 
 
-Modify config.js to suit your database connection strings.
+Modify config.js (config.js.example) to suit your database connection strings.
 
 ## Running
 
