@@ -4,7 +4,10 @@ A 8ball spinoff website.
 
 ## Configuration
 
-Modify answers.js if you want to have more/different answer types
+Modify answers.js if you want to have more/different answer types.
+
+
+Modify config.js to suit your database connection strings.
 
 ## Running
 
