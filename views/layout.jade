@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title Magic 7ball
+    link(rel='stylesheet', href='/css/style.css')
+    if process.env.NODE_ENV == 'production'
+      link(rel='stylesheet', href='/css/bootstrap.min.css')
+      script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    else
+      link(rel='stylesheet', href='/css/bootstrap.css')
+      script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js')
+    script(src='/js/7ball.js')
+  body
+    .centered
+      a(href='/')
+        img#logo(src='/images/7header.png')
+      .space
+    block content
+    .footerspace
+    .footer#footer
+      .centered
+        p Copyright (C) Gian Sass | Made with Node.JS | 
+          a(href='/tos') Terms of use
+        p This web page simulates a spinoff of the famous "Magic Eight Ball" toy, a registered trademark of Mattel Inc. Mattel Inc. is neither affiliated with this site, nor with authors of this site.
+    
