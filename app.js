@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var config = require('./config')
+var config = require('./config');
 
 if(process.env.NODE_ENV === 'production') {
   mongoose.connect(config.db.production);
