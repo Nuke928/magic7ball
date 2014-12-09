@@ -1,10 +1,13 @@
 /* Add your answers here */
 
-answers = [
+var answers = [
   'Yes',
-  'No',
+  'Indeed',
+  'Most likley',
+  'Probably',
   'Maybe',
-  'Not really'
+  'No',
+  'Not really',
 ];
 
 module.exports = answers;
