@@ -3,7 +3,7 @@
 var answers = [
   'Yes',
   'Indeed',
-  'Most likley',
+  'Most likely',
   'Probably',
   'Maybe',
   'No',
