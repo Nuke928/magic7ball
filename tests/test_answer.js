@@ -1,9 +1,11 @@
-var Answer = require('../models/answer')
+/*jshint expr: true*/
+
+var Answer = require('../models/answer');
 var answer = require('../lib/answer');
 var should = require('should');
 var mocha = require('mocha');
 var mongoose = require('mongoose');
-var config = require('../config')
+var config = require('../config');
 mongoose.connect(config.db.test);
 
 describe('Answers', function() {
