@@ -3,4 +3,6 @@ services:
   - mongodb
 before_install: npm install -g grunt-cli
 install: npm install
-script: npm test
+script:
+  - cp config.js.example config.js
+  - npm test
