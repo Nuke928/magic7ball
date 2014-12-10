@@ -15,7 +15,7 @@ describe('Answers', function() {
     });
   });
   it('returns an answer', function(done) {
-    q = 'Will I be the first man on Saturn?';
+    var q = 'Will I be the first man on Saturn?';
     answer.askQuestion(q, function(result) {
       result.question.should.equal(q);
       result.answer.should.be.ok;
@@ -24,7 +24,7 @@ describe('Answers', function() {
     });
   });
   it('should increase the ask count', function(done) {
-    q = 'Will I be the first man on Saturn?';
+    var q = 'Will I be the first man on Saturn?';
     answer.askQuestion(q, function(result) {
       result.question.should.equal(q);
       result.answer.should.be.ok;
