@@ -17,8 +17,10 @@ function answer_appear(obj, displayShareButtons) {
     $('#share-btn-twitter').css({'display': 'none'});
   }
   
-  $('#metadata').html(obj.askcount + ' people have asked this question.');
-  
+  if(obj.askcount) {
+    $('#metadata').html(obj.askcount + ' people have asked this question.');
+  }
+
   $('#answer').css({'display': 'block'});
   $('#answer').hide().fadeIn(3000);
 }
@@ -30,20 +32,28 @@ String.prototype.endsWith = function(pattern) {
 
 function btn_ask_click() {
   var q = document.getElementById('askbox').value;
-  if(currentAnswer && currentAnswer.question  + '?' == q) {
-    //return;
-  }
-  
+
   if(!q.endsWith('?')) {
     answer_appear({ answer: "Please ask me a question!!" }, false);
     return;
   }
-  
+
   if(q) {
-    $.get('/api/ask/' + q, function(result) {
-      obj = JSON.parse(result);
-      currentAnswer = obj;
-      answer_appear(obj, true);
+    $.ajax({
+      type: 'POST',
+      url: '/api/ask',
+      contentType: 'application/json',
+      async: false,
+      data: JSON.stringify({q: q}),
+      success: function(response) {
+        var obj = JSON.parse(response);
+        if(obj.error) {
+          alert(obj.error);
+          return;
+        }
+        currentAnswer = obj;
+        answer_appear(obj, true);
+      }
     });
   }
 }
