@@ -1,4 +1,4 @@
-var currentAnswer = null;
+var lastQuestion = null;
 
 function answer_appear(obj, displayShareButtons) {
   $('#answer-content').html('says: ' + obj.answer);
@@ -33,11 +33,15 @@ String.prototype.endsWith = function(pattern) {
 function btn_ask_click() {
   var q = document.getElementById('askbox').value;
 
+  if(lastQuestion == q) {
+    return;
+  }
+  
   if(!q.endsWith('?')) {
     answer_appear({ answer: "Please ask me a question!!" }, false);
     return;
   }
-
+  
   if(q) {
     $.ajax({
       type: 'POST',
@@ -51,7 +55,7 @@ function btn_ask_click() {
           alert(obj.error);
           return;
         }
-        currentAnswer = obj;
+        lastQuestion = obj.question;
         answer_appear(obj, true);
       }
     });
