@@ -1,7 +1,7 @@
 var lastQuestion = null;
 
 function answer_appear(obj, displayShareButtons) {
-  $('#answer-content').html('says: ' + obj.answer);
+  $('#answer-content').html('<b>' + obj.answer + '</b>');
   
   if(displayShareButtons) {
     $('#share-btn-twitter iframe').remove();

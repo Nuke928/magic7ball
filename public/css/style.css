@@ -16,6 +16,7 @@ body {
 
 .footerspace {
   width: 100%;
+  height: 50px;
 }
 
 .panel {
@@ -26,18 +27,16 @@ body {
 
 .answer-container {
   display: block;
-  height: 200px;
+  
+  height: 100px;
+  max-width: 500px;
+  
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .answer {
-  margin-left: auto;
-  margin-right: auto;
-  width: 300px;
-  display: none;
-}
-
-.question-box {
-  width: 500px;
+  display: none;  
 }
 
 .tos-container {
@@ -48,4 +47,10 @@ body {
 
 .tos-content {
   padding: 20px;
+}
+
+#btn-ask {
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
 }
