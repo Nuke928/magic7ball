@@ -2,3 +2,4 @@ public/js/bootstrap.js
 public/js/bootstrap.min.js
 public/js/npm.js
 node_modules
+dist
