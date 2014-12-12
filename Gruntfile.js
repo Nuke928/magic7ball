@@ -106,7 +106,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   
   grunt.registerTask('build', ['sass', 'concat', 'uglify', 'cssmin', 'imagemin', 'copy', 'clean:postbuild']);
   grunt.registerTask('test', ['jshint', 'simplemocha']);
